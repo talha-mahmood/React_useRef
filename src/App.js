@@ -1,23 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
-
+import {useRef,useEffect} from 'react'
 function App() {
+  const userref=useRef(0)
+ 
+
+  const editval=()=>{
+    userref.current.focus();
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Use Ref Example </h1>
+      <h2>by clicking on button input field gets focused</h2>
+<input ref={userref} type="text"/>
+<button onClick={editval}>Edit</button>
     </div>
   );
 }
